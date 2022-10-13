@@ -12,9 +12,9 @@ public class App {
         double highest = 0;
 
         System.out.print("Number " + count + ": ");
-        double number = scanner.nextDouble(); //decimals
+        double number = scanner.nextDouble();
 
-        if (number <= 0){ //check whether the first number is smaller/equal 0
+        if (number <= 0){
             System.out.print("No number entered." + System.lineSeparator());
         } else {
             do {
@@ -68,7 +68,34 @@ public class App {
 
     //todo Task 4
     public void printRhombus(){
-        // input your solution here
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("h: ");
+        int h = scanner.nextInt();
+        System.out.print("c: ");
+        char c = scanner.next().charAt(0);
+
+        if (h % 2 == 0) {
+            System.out.println("Invalid number!");
+        } else {
+            for (int i = 1; i <= h; i++) {
+                for (int j = 0; j < h - i; j++) {
+                    System.out.print(" ");
+                }
+                for (int s = 0; s < i * 2 - 1; s++) {
+                    System.out.print("*");
+                }
+                System.out.println();
+            }
+            for (int i = 0; i < h - 1; i++) {
+                for (int j = 0; j <= i; j++) {
+                    System.out.print(" ");
+                }
+                for (int s = 0; s < 2 * (h - i) - 3; s++) {
+                    System.out.print("*");
+                }
+                System.out.println();
+            }
+        }
     }
 
     //todo Task 5
