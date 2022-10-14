@@ -76,22 +76,22 @@ public class App {
 
         if (h % 2 == 0) {
             System.out.println("Invalid number!");
-        } else {
-            for (int i = 1; i <= h; i++) {
-                for (int j = 0; j < h - i; j++) {
+        } else {  //upper part including midline
+            for (int i = 0; i <= h - 3; i++) {         // for some reason I had to subtract 3 to reduce the size of rhombus
+                for (int j = 0; j < h - i - 3; j++) {  // same here, but to reduce the number of spaces
                     System.out.print(" ");
                 }
-                for (int s = 0; s < i * 2 - 1; s++) {
-                    System.out.print("*");
+                for (int k = -i; k <= i; k++) {
+                    System.out.print((char)(c - Math.abs(k)));
                 }
                 System.out.println();
-            }
-            for (int i = 0; i < h - 1; i++) {
-                for (int j = 0; j <= i; j++) {
+            }  //lower part
+            for (int i = h - 3; i >= 1; i--) {          //inversion; same here
+                for (int j = 0; j <= h - i - 3; j++) {  //same here
                     System.out.print(" ");
                 }
-                for (int s = 0; s < 2 * (h - i) - 3; s++) {
-                    System.out.print("*");
+                for (int k = -i + 1; k < i; k++) {
+                    System.out.print((char)(c - Math.abs(k)));
                 }
                 System.out.println();
             }
